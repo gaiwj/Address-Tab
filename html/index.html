@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <style>
+        .address{
+            border: 2px solid #999;
+            width:200px;
+            height:120px;
+            padding:30px;
+            float:left;
+            margin:10px;
+        }
+        .address:hover{
+            border:2px solid #f66;
+        }
+        .selectAdd{
+            border:2px solid #f66;
+            color:#f66;
+        }
+        .more{
+            text-align: center;
+            line-height: 120px;
+            display: block;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div class="address" v-for="(v,i) in addressList_3" :class="{selectAdd:index==i}"   @click="choice(i)">
+            <p>地址：{{v.address}}</p>
+            <p>电话：{{v.phone}}</p>
+       </div>
+       <div class="address" @click="more">
+            <span class="more">{{addressList_3.length === addressList.length?"收起":"展开"}}</span>
+       </div> 
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
